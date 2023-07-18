@@ -8,8 +8,11 @@ public class NumSquareRootValue implements Serializable {
 
     public NumSquareRootValue(Integer num) {
         this.num = num;
-        this.ans = Math.sqrt(num);
+        this.ans = (Double) Math.sqrt(num);
     }
+//    public Double SqaureRoot(){
+//        return this.ans;
+//    }
     public Double SqaureRoot(){
         return this.ans;
     }

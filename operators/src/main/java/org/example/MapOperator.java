@@ -13,21 +13,21 @@ import java.util.List;
 public class MapOperator implements SparkCon {
     public static void main(String[] args) throws Exception {
         List<Integer> l=new ArrayList<>();
-        l.add(2);
-        l.add(6);
-        l.add(5);
-        l.add(2);
-        l.add(2);
+        l.add(Integer.valueOf(2));
+        l.add(Integer.valueOf(6));
+        l.add(Integer.valueOf(5));
+        l.add(Integer.valueOf(2));
+        l.add(Integer.valueOf(2));
 //        Logger.getLogger("org.apache").setLevel(Level.WARN);
         Logger.getLogger("org.apache").setLevel(Level.WARN);
            SparkConf conf1=new SparkConf().setAppName("StartSpark").setMaster("local[*]");
                   JavaSparkContext sc1 = new JavaSparkContext(conf1);
                   JavaRDD<Integer> myRdd = sc1.parallelize(l);
-        Integer reduce = myRdd.reduce((a, b) -> a + b);
+        Integer reduce = myRdd.reduce((a, b) -> (Integer) (a + b));
         System.out.println("value of l elements sum : "+reduce);
 
         //map operator
-        JavaRDD<Double> mapResult=myRdd.map(v->Math.sqrt(v));
+        JavaRDD<Double> mapResult=myRdd.map(v-> (Double) Math.sqrt(v));
 //        mapResult.foreach(e-> System.out.println(e));
         mapResult.collect().forEach(w-> System.out.println(w));
         List<Double> collect = mapResult.collect();
@@ -35,8 +35,8 @@ public class MapOperator implements SparkCon {
         //no of element
         System.out.println("no of elements in rdd : "+mapResult.count());
         //another way of calculating
-        JavaRDD<Long> q=myRdd.map(c->1L);
-        Long count=q.reduce((c,c1)->c+c1);
+        JavaRDD<Long> q=myRdd.map(c-> (Long) 1L);
+        Long count=q.reduce((c,c1)-> (Long) (c+c1));
         System.out.println("no of elements in rdd : "+count);
 
 

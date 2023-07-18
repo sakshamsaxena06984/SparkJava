@@ -2,3 +2,12 @@ this is the demo text
 please not consider as big data files
 this is short files
 will use for reading purpose
+It is commonly assumed that
+usage of the word “computer” in the brain s
+ciences reflects a metaphor. However, there is no single
+ definition of the word “computer” in use. In fact, based on the usage of the word
+  “computer” in computer science, a computer is merely some physical machinery that can
+  in theory compute any computable function. According to this definition the brain is literally a computer;
+   there is no metaphor. But, this deviates from how the word “computer” is used in other academic disciplines. According to the definition used outside of computer science, “computers” are human-made devices that engage in sequential processing of inputs to produce outputs. According to this definition, brains are not computers, and arguably, computers serve as a weak metaphor for brains. Thus, we argue that the recurring brain-computer metaphor debate is actually just a semantic disagreement, because brains are either literally computers or clearly not very much like computers at all, depending on one's definitions. We propose that the best path forward is simply to put the debate to rest, and instead, have researchers be clear about which definition they are using in their work. In some circumstances, one can use the definition from computer science and simply ask, what type of computer
+--->
+is the brain? In other circumstances, it is important to use the other definition, and to clarify the
