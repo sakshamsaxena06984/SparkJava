@@ -4,9 +4,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.*;
 import scala.Function1;
 
 /**
@@ -53,6 +51,26 @@ public class App
         /*
           will check filter with lambda function
          */
+
+           //filter use with columns
+           /*
+           Column filter is also not working, will go through it
+            */
+//           Dataset<Row> id_col=dataset.filter("id");
+//           id_col.show(10);
+
+           Column id1 = dataset.col("id");
+           Column sName = dataset.col("sname");
+           Dataset<Row> filter1 = dataset.filter(id1.geq(1).and(sName.equalTo("Barry French")));
+           filter1.show();
+
+           Column id1f = functions.col("id");
+           Column sNamef = functions.col("sname");
+           Dataset<Row> barryFrench = dataset.filter(id1f.geq(1).and(sNamef.equalTo("Barry French")));
+           barryFrench.show();
+
+
+
 
        }catch (Exception e){
            e.printStackTrace();
