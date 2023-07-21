@@ -12,6 +12,9 @@
   <modules>
     <module>operators</module>
     <module>pair-rdd</module>
+      <module>joins</module>
+      <module>project1-big-data</module>
+    <module>spark-sql</module>
   </modules>
 
   <properties>
