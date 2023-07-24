@@ -21,9 +21,16 @@ public class DataFrameAPI {
            dataset=dataset.select(col("level"),
                   date_format(col("datetime"),"MMMM").as("month"),
                   date_format(col("datetime"),"M").as("m"));
-           dataset.printSchema();
-           dataset=dataset.groupBy(col("level"),col("month"),col("m")).count();
-           dataset.orderBy(col("m")).show();
+//           dataset.printSchema();
+//           dataset=dataset.groupBy(col("level"),col("month"),col("m")).count();
+//           dataset.orderBy(col("m")).show();
+
+            //way of creating pivot table
+            dataset.groupBy("level").pivot("month").count().show(10);
+
+            dataset.groupBy("level").pivot("m").count().na().fill(-888).show(10);
+
+            dataset.show(10);
 
         }catch (Exception e){
             e.printStackTrace();
