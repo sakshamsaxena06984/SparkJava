@@ -18,6 +18,11 @@ public class Aggregations {
             //USER DEFINE FUNCTION
             spark.udf().register("hasPassed",(String e)->e.equals("Barry French"),DataTypes.BooleanType);
 
+            //Another user define function
+            spark.udf().register("hassPassed1",(Double e)->{
+                return e>=68.02;
+            },DataTypes.BooleanType);
+
 
             System.out.println("hello, Spark-SQL");
 
@@ -37,7 +42,11 @@ public class Aggregations {
 
             dataset.withColumn("passing",callUDF("hasPassed",col("sname"))).show();
 
+            //using another user define function
+            dataset.withColumn("PASS",callUDF("hassPassed1",col("col3"))).show();
+
             dataset.show(30);
+            dataset.explain();
 
 
         }catch (Exception e){
