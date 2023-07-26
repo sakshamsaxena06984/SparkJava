@@ -15,6 +15,7 @@
       <module>joins</module>
       <module>project1-big-data</module>
     <module>spark-sql</module>
+      <module>spark-streaming</module>
   </modules>
 
   <properties>
