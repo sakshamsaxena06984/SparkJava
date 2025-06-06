@@ -15,7 +15,10 @@
       <module>joins</module>
       <module>project1-big-data</module>
     <module>spark-sql</module>
-      <module>spark-streaming</module>
+      <module>spark-d-streaming</module>
+    <module>spark-streaming</module>
+    <module>kafka-cli</module>
+      <module>spark-structured-streaming</module>
   </modules>
 
   <properties>
